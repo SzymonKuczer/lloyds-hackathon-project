@@ -157,3 +157,5 @@ class RetailListingDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = Retail_Listing_Serializer
 
 
+
+
