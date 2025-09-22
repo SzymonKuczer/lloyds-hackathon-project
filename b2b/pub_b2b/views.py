@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 # Home page view
 def homepage(request):
-    return render(request, 'homepage.html')
+    return render(request, 'templates/home/homepage.html')
 
 
 # About page view
