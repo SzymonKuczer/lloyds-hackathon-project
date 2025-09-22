@@ -1,0 +1,15 @@
+{% extends 'homepage.html' %}
+{% block content %}
+  <div class="container">
+    <h2>Choose Listing Type</h2>
+    <form method="post">
+      {% csrf_token %}
+      <select name="listing_type" required>
+        <option value="">--Select--</option>
+        <option value="product">Product Listing</option>
+        <option value="retail">Retail Listing</option>
+      </select>
+      <button type="submit">Continue</button>
+    </form>
+  </div>
+{% endblock %}

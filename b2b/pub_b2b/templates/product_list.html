@@ -1,0 +1,16 @@
+{% extends 'homepage.html' %}
+{% block content %}
+  <div class="container">
+    <h2>{{ type }} Listings</h2>
+    {% for item in products %}
+      <div class="listing-card">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+        <small>Posted by {{ item.user.username }} on {{ item.created_at|date:"F j, Y" }}</small>
+        <hr>
+      </div>
+    {% empty %}
+      <p>No {{ type }} listings yet.</p>
+    {% endfor %}
+  </div>
+{% endblock %}
