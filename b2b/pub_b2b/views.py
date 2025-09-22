@@ -2,6 +2,14 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
+from django.shortcuts import get_object_or_404
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+
+from .models import Retailer, Supplier
+from .services.distance_handler import calculate_euclidian_distance  # or import from the file where it
+
 from django.shortcuts import render
 from rest_framework import generics
 from .models import (
@@ -103,6 +111,30 @@ def retail_listings(request):
 class RetailerListCreate(generics.ListCreateAPIView):
     queryset = Retailer.objects.all()
     serializer_class = Retailer_Serializer
+
+class RetailerSupplierDistance(APIView):
+    """
+    GET /api/distance/<int:retailer_id>/<int:supplier_id>/
+    """
+
+    def get(self, request, retailer_id, supplier_id, format=None):
+        retailer = get_object_or_404(Retailer, pk=retailer_id)
+        supplier = get_object_or_404(Supplier, pk=supplier_id)
+
+        try:
+            d_km = calculate_euclidian_distance(retailer.address, supplier.address)
+        except ValueError as exc:
+            return Response({"detail": str(exc)}, status=status.HTTP_400_BAD_REQUEST)
+
+        return Response(
+            {
+                "retailer_id": retailer_id,
+                "supplier_id": supplier_id,
+                "distance_km": d_km,
+                "units": "km",
+            },
+            status=status.HTTP_200_OK,
+        )
 
 class RetailerDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Retailer.objects.all()
