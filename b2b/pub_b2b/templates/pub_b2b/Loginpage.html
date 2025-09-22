@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Marketplace</title>
+  <style>
+    body {
+      background-color: #cc99ff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    table {
+      width: 80%;
+      max-width: 800px;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th {
+      background-color: #9900cc;
+      color: white;
+      padding: 15px;
+      font-size: 18px;
+    }
+
+    td {
+      padding: 20px;
+      vertical-align: top;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, select {
+      margin-bottom: 12px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      transition: border 0.2s ease;
+    }
+
+    button {
+      background: #9900cc;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #9900cc;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>Register</th>
+      <th>Login</th>
+    </tr>
+    <tr>
+<!--Registration-->
+      <td>
+        <form>
+          <input type="text" placeholder="Full Name" required>
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Password" required>
+          <select required>
+            <option value="">Select Account Type</option>
+            <option value="supplier">Supplier</option>
+            <option value="retailer">Retailer</option>
+          </select>
+          <button type="submit">Register</button>
+        </form>
+      </td>
+<!--Login-->
+      <td>
+        <form>
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Password" required>
+          <button type="submit">Login</button>
+        </form>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
