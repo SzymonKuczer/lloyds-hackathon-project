@@ -77,8 +77,8 @@ def create_plisting(request):
 
 
 def product_listings(request):
-    products = Product_listing.objects.all().order_by('-id')
-    return render(request, 'product_list.html', {'products': products})
+    products = Product_listing.objects.all().order_by('-price')
+    return render(request, 'pub_b2b/product_list.html', {'products': products})
 
 
 @login_required
@@ -92,12 +92,12 @@ def create_rlisting(request):
             return redirect('retail_listing')
         else:
             form = RetailForm()
-        return render(request, 'rcreate_post.html', {'form': form})
+        return render(request, 'pub_b2b/rcreate_post.html', {'form': form})
 
 
 def retail_listings(request):
-    products = Retail_listing.objects.all().order_by('-id')
-    return render(request, 'choose_listing_type.html', {'products': products})
+    products = Retail_listing.objects.all().order_by('-price')
+    return render(request, 'pub_b2b/choose_listing_type.html', {'products': products})
 
 
 # Retailer Views
