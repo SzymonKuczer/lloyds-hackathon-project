@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from .views import RetailerSupplierDistance  # import the class
+
 
 urlpatterns = [
     path('', views.homepage, name='homepage'),
@@ -26,4 +28,5 @@ urlpatterns = [
     path('api/product_listings/<int:pk>/', views.ProductListingDetail.as_view(), name='product-listing-detail'),
     path('api/retail_listings/', views.RetailListingListCreate.as_view(), name='retail-listing-list-create'),
     path('api/retail_listings/<int:pk>/', views.RetailListingDetail.as_view(), name='retail-listing-detail'),
+    path("api/distance/<int:retailer_id>/<int:supplier_id>/", RetailerSupplierDistance.as_view(), name="retailer-supplier-distance"),
 ]
