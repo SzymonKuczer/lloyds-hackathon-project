@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Fixed purple banner at the top */
+    .top-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px; /* increased height to 70px */
+      background-color: purple;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* text left, buttons right */
+      padding: 0 20px;
+      box-sizing: border-box;
+      z-index: 9999;
+    }
+
+    /* Banner text */
+    .banner-text {
+      color: white;
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    /* Buttons container */
+    .banner-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap; /* allow wrap on small screens */
+    }
+
+    /* Banner buttons */
+    .banner-button {
+      background-color: white;
+      color: purple;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .banner-button:hover {
+      background-color: #eee;
+    }
+
+    /* Push page content down so it’s not hidden */
+    body {
+      margin-top: 70px; /* match banner height */
+      font-family: Arial, sans-serif;
+    }
+  </style>
 </head>
 <body>
-<<<<<<< HEAD:b2b/pub_b2b/templates/home/index.html
 
+<<<<<<< HEAD
    <div class="top-banner">
         <p class="banner-text">This is B to B Pubs</p>
    </div>
@@ -25,30 +81,20 @@
     <a href="{% url 'retail_listing' %}">View Retail Listings</a>
   </div>
 {% endblock %}
+=======
+  <div class="top-banner">
+    <p class="banner-text">This is B to B Pubs</p>
+    <div class="banner-buttons">
+      <a href="/marketplace" class="banner-button">Marketplace</a>
+      <a href="/" class="banner-button">Home</a>
+    </div>
+  </div>
+
+  <div style="padding:20px;">
+    <h1>Welcome to the site</h1>
+    <p>Your content starts here...</p>
+  </div>
+>>>>>>> 3d966c41b21dfa76f1520286a524206726b755d2
 
 </body>
 </html>
-<style>
-
-.top-banner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background-color: purple;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;      /* keeps it above everything else */
-}
-
-
-.banner-text {
-
-  color: white;       /* text color */
-  font-size: 1.25rem; /* size of the text */
-  font-weight: bold;
-  margin: 0;
-}
-</style>
