@@ -111,7 +111,6 @@ def retail_listings(request):
     products = Retail_listing.objects.all().order_by('-id')
     return render(request, 'product_list.html', {'products': products})
 
-
 # Retailer Views
 class RetailerListCreate(generics.ListCreateAPIView):
     queryset = Retailer.objects.all()
