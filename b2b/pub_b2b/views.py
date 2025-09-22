@@ -1,3 +1,4 @@
+
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
@@ -19,6 +20,7 @@ from .serializers import (
     Product_Listing_Serializer,
     Retail_Listing_Serializer
 )
+
 # Home page view
 def homepage(request):
     return render(request, '../templates/homepage.html')
@@ -42,6 +44,8 @@ def register(request):
 # Optional: main index view
 def pub_b2b(request):
     return render(request, 'homepage.html')
+
+
 
 # Form request for posts
 from .forms import ProductForm, RetailForm
@@ -148,3 +152,5 @@ class RetailListingListCreate(generics.ListCreateAPIView):
 class RetailListingDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Retail_listing.objects.all()
     serializer_class = Retail_Listing_Serializer
+
+

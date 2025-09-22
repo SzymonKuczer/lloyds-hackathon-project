@@ -78,6 +78,16 @@ class Product_listing(models.Model):
     beverage_type = models.CharField(max_length=255)
     pass
 
+class Retail_listing(models.Model):
+    r_listing_id = models.AutoField(primary_key=True)  # Auto-incrementing integer PK
+    retailer_account_id = models.ForeignKey(Retailer, on_delete=models.CASCADE)
+    product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    beverage_name = models.CharField(max_length=255, blank=True, null=True)
+    beverage_type = models.CharField(max_length=255)
+    pass
+
 
 class Retail_listing(models.Model):
     r_listing_id = models.AutoField(primary_key=True)  # Auto-incrementing integer PK
