@@ -80,9 +80,9 @@ def create_plisting(request):
             post.user = request.user
             post.save()
             return redirect('product_listing')
-        else:
-            form = ProductForm()
-        return render(request, 'pcreate_post.html', {'form': form})
+    else:
+        form = ProductForm()
+    return render(request, 'pub_b2b/pcreate_post.html', {'form': form})
 
 
 def product_listings(request):
