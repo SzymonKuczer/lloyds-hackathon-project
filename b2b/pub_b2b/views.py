@@ -46,8 +46,8 @@ def login(request):
 
 
 # Register page view
-def register(request):
-    return render(request, 'register.html')
+def homepage(request):
+    return render(request, '../templates/pub_b2b/homepage.html')
 
 
 # Optional: main index view
