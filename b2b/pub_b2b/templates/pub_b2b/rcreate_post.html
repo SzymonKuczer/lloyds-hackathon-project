@@ -1,4 +1,94 @@
 {% block content %}
+<style>
+  body {
+    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(135deg, #4b2e83 0%, #a084e8 100%);
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 500px;
+    margin: 120px auto 0 auto;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(75, 46, 131, 0.1);
+    padding: 40px 30px;
+    color: #fff;
+  }
+
+  .container h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 32px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  form p {
+    margin-bottom: 24px;
+    text-align: left;
+  }
+
+  form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #ffffff;
+  }
+
+  form input[type="text"],
+  form input[type="number"],
+  form input[type="email"],
+  form input[type="url"],
+  form input[type="file"],
+  form textarea,
+  form select {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #4b2e83;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(75, 46, 131, 0.1);
+    box-sizing: border-box;
+  }
+
+  form input[type="file"] {
+    padding: 8px;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    padding: 16px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: linear-gradient(90deg, #4b2e83 0%, #a084e8 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(75, 46, 131, 0.1);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    margin-top: 20px;
+  }
+
+  button[type="submit"]:hover {
+    background: linear-gradient(90deg, #a084e8 0%, #4b2e83 100%);
+    transform: translateY(-2px) scale(1.03);
+  }
+
+  @media (max-width: 600px) {
+    .container {
+      margin-top: 100px;
+      padding: 30px 20px;
+    }
+  }
+</style>
+
   <div class="container">
     <h2>Create a {{ view_name }} Listing</h2>
     <form method="post">
