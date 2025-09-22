@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
-=======
 from django.shortcuts import render
 from rest_framework import generics
 from .models import (
@@ -21,8 +19,6 @@ from .serializers import (
     Product_Listing_Serializer,
     Retail_Listing_Serializer
 )
->>>>>>> 3d966c41b21dfa76f1520286a524206726b755d2
-
 # Home page view
 def homepage(request):
     return render(request, '../templates/homepage.html')
@@ -46,8 +42,6 @@ def register(request):
 # Optional: main index view
 def pub_b2b(request):
     return render(request, 'homepage.html')
-
-<<<<<<< HEAD
 
 # Form request for posts
 from .forms import ProductForm, RetailForm
@@ -100,7 +94,7 @@ def create_rlisting(request):
 def retail_listings(request):
     products = Retail_listing.objects.all().order_by('-id')
     return render(request, 'product_list.html', {'products': products})
-=======
+
 # Retailer Views
 class RetailerListCreate(generics.ListCreateAPIView):
     queryset = Retailer.objects.all()
@@ -154,5 +148,3 @@ class RetailListingListCreate(generics.ListCreateAPIView):
 class RetailListingDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Retail_listing.objects.all()
     serializer_class = Retail_Listing_Serializer
-
->>>>>>> 3d966c41b21dfa76f1520286a524206726b755d2
