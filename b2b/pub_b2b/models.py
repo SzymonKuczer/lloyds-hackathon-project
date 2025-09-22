@@ -16,3 +16,20 @@ class Retailer(models.Model):
     ]
     account_type = models.CharField(max_length=20, choices=ACCOUNT_TYPE_CHOICES)
     pass
+
+class  Product(models.model):
+    Product_ID = models.CharField(max_length=6, primary_key = True)
+    Product_name = models.CharField(max_length=255)
+    Product_Storage_CHOICES = [
+        ('Barrel', 'BARREL'),
+        ('Bottle', 'BOTTLE'),
+        ('Crate', 'CRATE'),
+    ]
+    storage_type = models.CharField(max_length=20, choices=Product_Storage_CHOICES)
+    Product_TYPE_CHOICES = [
+        ('Lager', 'LAGER'),
+        ('Cider', 'CIDER'),
+        ('Stout', 'STOUT'),
+        ('Ale', 'ALE'),
+    ]
+    product_type = models.CharField(max_length=20, choices=Product_TYPE_CHOICES)
