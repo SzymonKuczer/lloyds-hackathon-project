@@ -102,13 +102,57 @@
         <a href="/profile" class="header-btn">Profile</a>
       </div>
     </div>
+    <style>
+      .container {
+        max-width: 500px;
+        margin: 120px auto 0 auto;
+        background: rgba(255, 255, 255, 0.07);
+        border-radius: 18px;
+        box-shadow: 0 4px 24px rgba(75, 46, 131, 0.1);
+        padding: 40px 24px 32px 24px;
+        text-align: center;
+      }
+      .container h1 {
+        color: #4b2e83;
+        font-size: 2.2rem;
+        margin-bottom: 36px;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+      .listing-btn {
+        display: block;
+        width: 100%;
+        margin: 18px 0;
+        padding: 20px 0;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #fff;
+        background: linear-gradient(90deg, #4b2e83 0%, #a084e8 100%);
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(75, 46, 131, 0.1);
+        text-decoration: none;
+        transition: background 0.18s, color 0.18s, transform 0.12s;
+        cursor: pointer;
+        outline: none;
+      }
+      .listing-btn:hover {
+        background: linear-gradient(90deg, #a084e8 0%, #4b2e83 100%);
+        color: #fff;
+        transform: translateY(-2px) scale(1.03);
+      }
+    </style>
     <div class="container">
-            <h1>Welcome to the B2B Hub</h1>
-            <a href="{% url 'choose_listing' %}">Create a Listing</a>
-            <br>
-            <a href="{% url 'product_listing' %}">View Product Listings</a>
-            <br>
-            <a href="{% url 'retail_listing' %}">View Retail Listings</a>
-          </div>
+      <h1>Welcome to the B2B Hub</h1>
+      <a href="{% url 'choose_listing' %}" class="listing-btn"
+        >Create a Listing</a
+      >
+      <a href="{% url 'product_listing' %}" class="listing-btn"
+        >View Product Listings</a
+      >
+      <a href="{% url 'retail_listing' %}" class="listing-btn"
+        >View Retail Listings</a
+      >
+    </div>
   </body>
 </html>
