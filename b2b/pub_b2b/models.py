@@ -19,7 +19,7 @@ class Retailer(models.Model):
     pass
 
 
-class  Product(models.model):
+class  Product(models.Model):
     Product_ID = models.CharField(max_length=6, primary_key = True)
     Product_name = models.CharField(max_length=255)
     Product_Storage_CHOICES = [
