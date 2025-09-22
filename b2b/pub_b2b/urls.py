@@ -12,6 +12,8 @@ urlpatterns = [
 
 
 
+
+
     path('api/retailers/', views.RetailerListCreate.as_view(), name='retailer-list-create'),
     path('api/retailers/<int:pk>/', views.RetailerDetail.as_view(), name='retailer-detail'),
     path('api/products/', views.ProductListCreate.as_view(), name='product-list-create'),
