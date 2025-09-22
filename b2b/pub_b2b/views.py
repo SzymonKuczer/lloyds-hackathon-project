@@ -96,14 +96,12 @@ def create_rlisting(request):
 
 
 def retail_listings(request):
-<<<<<<< HEAD
     products = Retail_listing.objects.all().order_by('-price')
     return render(request, 'pub_b2b/choose_listing_type.html', {'products': products})
 
-=======
     products = Retail_listing.objects.all().order_by('-id')
     return render(request, 'product_list.html', {'products': products})
->>>>>>> 84bbfba8415a9c6048af2a7ff79faff4e2ab760b
+
 
 # Retailer Views
 class RetailerListCreate(generics.ListCreateAPIView):
@@ -158,5 +156,7 @@ class RetailListingListCreate(generics.ListCreateAPIView):
 class RetailListingDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Retail_listing.objects.all()
     serializer_class = Retail_Listing_Serializer
+
+
 
 
