@@ -42,7 +42,7 @@ def about(request):
 
 # Login page view
 def login(request):
-    return render(request, 'login.html')
+    return render(request, '../templates/Loginpage.html')
 
 
 # Register page view
