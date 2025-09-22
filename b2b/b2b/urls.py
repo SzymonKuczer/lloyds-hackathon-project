@@ -18,8 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 from pub_b2b import views
-from .distance_handler import calculate_euclidian_distance  # or import from the file where it
-from pub_b2b.views import RetailerSupplierDistance  # import the class
+#from .distance_handler import calculate_euclidian_distance  # or import from the file where it
+#from pub_b2b.views import RetailerSupplierDistance  # import the class
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -40,7 +40,7 @@ urlpatterns = [
     path('api/product_listings/<int:pk>/', views.ProductListingDetail.as_view(), name='product-listing-detail'),
     path('api/retail_listings/', views.RetailListingListCreate.as_view(), name='retail-listing-list-create'),
     path('api/retail_listings/<int:pk>/', views.RetailListingDetail.as_view(), name='retail-listing-detail'),
-    path("api/distance/<int:retailer_id>/<int:supplier_id>/", RetailerSupplierDistance.as_view(), name="retailer-supplier-distance"),
+    #path("api/distance/<int:retailer_id>/<int:supplier_id>/", RetailerSupplierDistance.as_view(), name="retailer-supplier-distance"),
 
     path('b2b/', include('pub_b2b.urls'))
 ]
