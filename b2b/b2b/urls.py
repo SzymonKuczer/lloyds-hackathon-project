@@ -23,10 +23,11 @@ from pub_b2b.views import RetailerSupplierDistance  # import the class
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.homepage, name='homepage'),
+    path('', views.homepage, name='mainpage'),
     path('about/', views.about, name='about'),
-    path('register/', views.register, name='register'),
+    #path('register/', views.register, name='register'),
     path('login/', views.login, name='login'),
+    path('homepage/', views.homepage, name='homepage'),
 
     path('api/retailers/', views.RetailerListCreate.as_view(), name='retailer-list-create'),
     path('api/retailers/<int:pk>/', views.RetailerDetail.as_view(), name='retailer-detail'),

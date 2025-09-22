@@ -32,7 +32,7 @@ from .serializers import (
 
 # Home page view
 def homepage(request):
-    return render(request, '../templates/homepage.html')
+    return render(request, '../templates/mainpage.html')
 
 
 # About page view
@@ -42,12 +42,12 @@ def about(request):
 
 # Login page view
 def login(request):
-    return render(request, 'login.html')
+    return render(request, '../templates/Loginpage.html')
 
 
 # Register page view
-def register(request):
-    return render(request, 'register.html')
+def homepage(request):
+    return render(request, '../templates/pub_b2b/homepage.html')
 
 
 # Optional: main index view

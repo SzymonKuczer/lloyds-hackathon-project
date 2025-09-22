@@ -6,6 +6,9 @@ from .views import RetailerSupplierDistance  # import the class
 urlpatterns = [
     path('', views.homepage, name='homepage'),
 
+    path('login/', views.login, name='login'),
+    #path('register/', views.register, name='register'),
+    path('homepage/', views.homepage, name='homepage'),
     path('choose-listing/', views.choose_listing_type, name='choose_listing'),
     path('create-product/', views.create_plisting, name='create_plisting'),
     path('create-retail/', views.create_rlisting, name='create_rlisting'),
