@@ -99,9 +99,11 @@ def create_rlisting(request):
             post.user = request.user
             post.save()
             return redirect('retail_listing')
-        else:
-            form = RetailForm()
-        return render(request, 'pub_b2b/rcreate_post.html', {'form': form})
+    else:
+        form = RetailForm()  # ✅ Handle GET request
+
+    # ✅ Always return a response
+    return render(request, 'pub_b2b/rcreate_post.html', {'form': form})
 
 
 def retail_listings(request):
