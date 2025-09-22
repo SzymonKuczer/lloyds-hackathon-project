@@ -1,30 +1,18 @@
-"""
-URL configuration for b2b project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
-from django.urls import path, include
-
-from pub_b2b import views
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', views.homepage, name='homepage'),
-    path('about/', views.about, name='about'),
-    path('register/', views.register, name='register'),
-    path('login/', views.login, name='login'),
+
+    path('choose-listing/', views.choose_listing_type, name='choose_listing'),
+    path('create-product/', views.create_plisting, name='create_plisting'),
+    path('create-retail/', views.create_rlisting, name='create_rlisting'),
+    path('products/', views.product_listings, name='product_listing'),
+    path('retail/', views.retail_listings, name='retail_listing'),
+
+
+
+
 
     path('api/retailers/', views.RetailerListCreate.as_view(), name='retailer-list-create'),
     path('api/retailers/<int:pk>/', views.RetailerDetail.as_view(), name='retailer-detail'),
@@ -38,6 +26,4 @@ urlpatterns = [
     path('api/product_listings/<int:pk>/', views.ProductListingDetail.as_view(), name='product-listing-detail'),
     path('api/retail_listings/', views.RetailListingListCreate.as_view(), name='retail-listing-list-create'),
     path('api/retail_listings/<int:pk>/', views.RetailListingDetail.as_view(), name='retail-listing-detail'),
-
-    path('b2b/', include('pub_b2b.urls'))
 ]
