@@ -32,7 +32,7 @@ from .serializers import (
 
 # Home page view
 def homepage(request):
-    return render(request, '../templates/homepage.html')
+    return render(request, '../templates/mainpage.html')
 
 
 # About page view
