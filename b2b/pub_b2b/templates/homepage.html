@@ -62,6 +62,26 @@
 </head>
 <body>
 
+<<<<<<< HEAD
+   <div class="top-banner">
+        <p class="banner-text">This is B to B Pubs</p>
+   </div>
+=======
+<h1> hi </h1>
+>>>>>>> 32c010772dcfcd46c3628ff2cd68cf5760c5bea3:b2b/pub_b2b/templates/homepage.html
+
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container">
+    <h1>Welcome to the B2B Hub</h1>
+    <a href="{% url 'choose_listing' %}">Create a Listing</a>
+    <br>
+    <a href="{% url 'product_listing' %}">View Product Listings</a>
+    <br>
+    <a href="{% url 'retail_listing' %}">View Retail Listings</a>
+  </div>
+{% endblock %}
+=======
   <div class="top-banner">
     <p class="banner-text">This is B to B Pubs</p>
     <div class="banner-buttons">
@@ -74,6 +94,7 @@
     <h1>Welcome to the site</h1>
     <p>Your content starts here...</p>
   </div>
+>>>>>>> 3d966c41b21dfa76f1520286a524206726b755d2
 
 </body>
 </html>
