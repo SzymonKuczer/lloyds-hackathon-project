@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Poppins", Arial, sans-serif;
+        background: linear-gradient(135deg, #4b2e83 0%, #a084e8 100%);
+        min-height: 100vh;
+      }
+      .top-banner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background-color: #4b2e83;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 32px;
+        box-sizing: border-box;
+        z-index: 9999;
+        box-shadow: 0 2px 8px rgba(75, 46, 131, 0.08);
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand-logo {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(75, 46, 131, 0.1);
+        overflow: hidden;
+      }
+      .brand-logo img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        display: block;
+      }
+      .brand-name {
+        color: #fff;
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+      .banner-buttons {
+        display: flex;
+        gap: 12px;
+      }
+      .banner-button {
+        background-color: #fff;
+        color: #4b2e83;
+        border: none;
+        padding: 7px 20px;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: background 0.2s, color 0.2s;
+      }
+      .banner-button:hover {
+        background-color: #e5dbff;
+        color: #2d1856;
+      }
+      .main-content {
+        margin-top: 110px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 60vh;
+      }
+      .about-quote {
+        color: #fff;
+        font-size: 1.35rem;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 24px;
+        text-shadow: 0 2px 8px rgba(75, 46, 131, 0.18);
+        letter-spacing: 0.5px;
+      }
+      .about-section {
+        background: rgba(100, 137, 168, 0.5);
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(75, 46, 131, 0.08);
+        padding: 40px 32px 32px 32px;
+        max-width: 500px;
+        text-align: center;
+        margin-bottom: 32px;
+      }
+      .about-section h1 {
+        color: #fff;
+        font-size: 2.7rem;
+        margin-bottom: 22px;
+        font-weight: 800;
+        letter-spacing: 1px;
+      }
+      .about-section p {
+        color: #fff;
+        font-size: 1.35rem;
+        margin-bottom: 32px;
+        font-weight: 500;
+      }
+      .main-login-btn {
+        background: #4b2e83;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 12px 36px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+        margin-top: 10px;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .main-login-btn:hover {
+        background: #2d1856;
+      }
+      @media (max-width: 600px) {
+        .about-section {
+          padding: 24px 8px;
+        }
+        .top-banner {
+          flex-direction: column;
+          height: auto;
+          padding: 10px;
+        }
+        .main-content {
+          margin-top: 90px;
+        }
+      }
+    </style>
+    <style>
+      .contact-footer {
+        width: 100%;
+        background: rgba(75, 46, 131, 0.85);
+        color: #fff;
+        padding: 40px 0 0 0;
+        margin-top: 40px;
+      }
+      .contact-section {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 0 16px 32px 16px;
+        text-align: center;
+      }
+      .contact-section h2 {
+        margin-bottom: 18px;
+        font-size: 2rem;
+        color: #ffffff;
+      }
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        border-radius: 6px;
+        border: none;
+        padding: 10px;
+        font-size: 1rem;
+        outline: none;
+        resize: none;
+        background: #6489a8;
+        color: #fff;
+      }
+      .contact-form input::placeholder,
+      .contact-form textarea::placeholder {
+        color: #e0e6ed;
+        opacity: 1;
+      }
+      .contact-form input {
+        height: 40px;
+      }
+      .contact-form button {
+        background: #6489a8;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 10px 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: not-allowed;
+        margin-top: 6px;
+        transition: background 0.2s, color 0.2s;
+      }
+      .contact-form button:enabled {
+        cursor: pointer;
+        background: #6489a8;
+        color: #fff;
+      }
+      .contact-form button:enabled:hover {
+        background: #46607a;
+        color: #fff;
+      }
+      .contact-info {
+        margin-top: 10px;
+        font-size: 1rem;
+      }
+      .contact-info a {
+        color: #fff;
+        text-decoration: underline;
+      }
+      @media (max-width: 600px) {
+        .contact-section {
+          padding: 0 4px 24px 4px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-banner">
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="Logo.webp" alt="BizChat Logo" />
+        </div>
+        <span class="brand-name">BizChat</span>
+      </div>
+      <div class="banner-buttons">
+        <a href="/login" class="banner-button">Login</a>
+        <a href="/register" class="banner-button">Sign Up</a>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="about-quote">
+        “Empowering Local Trade Through Seamless Connections”
+      </div>
+      <div class="about-section">
+        <h1>About Us</h1>
+        <p>
+          BizChat is the social platform for local businesses to connect,
+          collaborate, and grow together. Join communities, chat with other
+          business owners, and discover new opportunities in your area.
+        </p>
+        <a href="/login" class="main-login-btn">Login / Register</a>
+      </div>
+    </div>
+    <footer class="contact-footer">
+      <div class="contact-section">
+        <h2>Contact Us</h2>
+        <form class="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows="4"
+            required
+          ></textarea>
+          <button type="submit" disabled>Send</button>
+        </form>
+        <div class="contact-info">
+          <p>Email: <a href="mailto:info@bizchat.com">info@bizchat.com</a></p>
+          <p>Phone: 01234 567890</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
