@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 class Retailer(models.Model):
@@ -20,8 +21,8 @@ class Retailer(models.Model):
     pass
 
 
-class  Product(models.Model):
-    Product_id = models.CharField(max_length=6, primary_key = True)
+class Product(models.Model):
+    Product_id = models.CharField(max_length=6, primary_key=True)
 
     Product_name = models.CharField(max_length=255)
     Product_Storage_CHOICES = [
@@ -39,8 +40,9 @@ class  Product(models.Model):
     product_type = models.CharField(max_length=20, choices=Product_TYPE_CHOICES)
     pass
 
+
 class Supplier(models.Model):
-    supplier_account_id = models.AutoField(primary_key=True) # Auto-incrementing integer PK
+    supplier_account_id = models.AutoField(primary_key=True)  # Auto-incrementing integer PK
 
     name = models.CharField(max_length=255)
     address = models.TextField()
@@ -55,6 +57,7 @@ class Supplier(models.Model):
     account_type = models.CharField(max_length=20, choices=ACCOUNT_TYPE_CHOICES)
     pass
 
+
 class Stock(models.Model):
     stock_id = models.AutoField(primary_key=True)  # Auto-incrementing integer PK
     retailer_account_id = models.ForeignKey(Retailer, on_delete=models.CASCADE)
@@ -62,6 +65,7 @@ class Stock(models.Model):
 
     beverage_name = models.CharField(max_length=255)
     pass
+
 
 class Product_listing(models.Model):
     p_listing_id = models.AutoField(primary_key=True)  # Auto-incrementing integer PK
@@ -73,6 +77,7 @@ class Product_listing(models.Model):
     beverage_name = models.CharField(max_length=255)
     beverage_type = models.CharField(max_length=255)
     pass
+
 
 class Retail_listing(models.Model):
     r_listing_id = models.AutoField(primary_key=True)  # Auto-incrementing integer PK
