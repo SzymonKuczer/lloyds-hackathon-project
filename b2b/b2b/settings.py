@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'pub_b2b',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
