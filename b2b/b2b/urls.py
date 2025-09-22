@@ -22,8 +22,8 @@ from pub_b2b import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homepage, name='homepage'),
-    path('about/', views.about, name='aboutpage'),
+    path('about/', views.about, name='about'),
     path('register/', views.register, name='register'),
-    path('login/', views.login, name='loginpage'),
+    path('login/', views.login, name='login'),
     path('b2b/', include('pub_b2b.urls'))
 ]

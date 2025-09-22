@@ -23,4 +23,4 @@ def register(request):
 
 # Optional: main index view
 def pub_b2b(request):
-    return render(request, 'index.html')
+    return render(request, 'homepage.html')
